@@ -1,0 +1,6 @@
+curl -s -c cookies.txt -X POST 'http://localhost:5000/customer/login' -H 'Content-Type: application/json' -d '{"username":"zeni","password":"1234"}'
+Customer successfully logged in
+curl -s -b cookies.txt -X PUT 'http://localhost:5000/customer/auth/review/1?review=Excellent%20book'
+{"message":"Review for the ISBN 1 posted by the user zeni"}
+curl -s -b cookies.txt -X DELETE 'http://localhost:5000/customer/auth/review/1'
+{"message":"Review for the ISBN 1 posted by the user zeni deleted"}
